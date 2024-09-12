@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/27cd3887-8713-4d06-9aad-f39e1c71aa78)# IMAGE-TRANSFORMATIONS
+# IMAGE-TRANSFORMATIONS
 
 
 ## Aim
@@ -141,6 +141,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/3cd5b5bd-0fed-4bcd-8dd9-caebcbcf580c)
 
 <BR>
+
 ### i)Image Translation
 <br>
 
