@@ -12,31 +12,48 @@ rows,cols,dim=input_img.shape
 M=np.float32([[1,0,20],
              [0,1,50],
              [0,0,1]])
-translated_img=cv2.
-plt.axis('off')
+translated_img = cv2.warpAffine(input_img, M[:2], (cols, rows))
 
+plt.axis('off')
+plt.imshow(translated_img)
+plt.show()
 
 
 ##ii)Image Scaling
 
-scaled_img=cv2.warpPerspective(input_img,M,(cols,rows))
+scale_factor = 1.5
+M_scale = np.float32([[scale_factor, 0, 0],
+                      [0, scale_factor, 0],
+                      [0, 0, 1]])
+
+scaled_img = cv2.warpAffine(input_img, M[:2], (int(cols*scale_factor), int(rows*scale_factor)))
+
 plt.axis('off')
 plt.imshow(scaled_img)
 plt.show()
 
 
 ##iii)Image Shearing
-M_x=np.float32([[1,0.2,0],
-               [0,1,0],
-               [0,0,1]])
-M_y=np.
-sheared_img_xaxis=cv2.warpPerspective(input_img,M_x,(cols,rows))
-sheared_img_yaxis=
+M_x = np.float32([[1, 0.2, 0],
+                  [0, 1, 0],
+                  [0, 0, 1]])
+
+sheared_img_xaxis = cv2.warpAffine(input_img, M_x[:2], (cols, rows))
+
 plt.axis('off')
 plt.imshow(sheared_img_xaxis)
 plt.show()
-plt.axis
+
+M_y = np.float32([[1, 0, 0],
+                  [0.2, 1, 0],
+                  [0, 0, 1]])
+
+sheared_img_yaxis = cv2.warpAffine(input_img, M_y[:2], (cols, rows))
+
+plt.axis('off')
+plt.imshow(sheared_img_yaxis)
 plt.show()
+
 
 
 
